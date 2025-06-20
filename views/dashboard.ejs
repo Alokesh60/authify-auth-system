@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Dashboard | Authify</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/dashboard.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="authify-logo">
+        <i class="fas fa-shield-alt logo-icon"></i>
+        <span class="logo-text">Authify</span>
+      </div>
+    </nav>
+
+    <!-- Page Heading -->
+    <div class="dashboard-header">
+      <div class="container">
+        <h2 class="dashboard-title">Welcome to Your Dashboard</h2>
+        <p class="text-muted">Here you can manage your profile and actions</p>
+      </div>
+    </div>
+
+    <!-- Dashboard Card -->
+    <div class="dashboard-card">
+      <div class="container">
+        <div class="card shadow p-4">
+          <div class="text-center">
+            <img
+              src="https://ui-avatars.com/api/?name=<%= user.name || user.email %>&background=random"
+              alt="User Avatar"
+              class="user-avatar rounded-circle mb-3"
+            />
+            <h4>Hello, <%= user.name || user.email %> 👋</h4>
+            <p>
+              <strong>Email:</strong> <%= user.email %><br />
+              <strong>Account Created:</strong> <%= user.createdAt ?
+              user.createdAt.toDateString() : "N/A" %>
+            </p>
+            <a class="btn btn-danger" href="/logout">
+              <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

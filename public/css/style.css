@@ -1,0 +1,80 @@
+body {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+}
+.card {
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3);
+  transform: none;
+}
+
+.form-control {
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  transition: all 0.3s ease;
+}
+.form-control:focus {
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.25);
+  border-color: #667eea;
+}
+.btn-primary {
+  background: linear-gradient(to right, #667eea, #764ba2);
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+.input-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6c757d;
+  font-size: 16px;
+  z-index: 10;
+}
+.icon-input {
+  padding-left: 45px !important;
+  height: 45px;
+}
+
+input::placeholder {
+  color: #adb5bd;
+  transition: color 0.3s ease;
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+
+.h1 {
+  background: linear-gradient(135deg, #06b6d4 0%, #2563eb 100%);
+}
+
+.otp-boxes {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.otp-boxes input {
+  width: 2.5rem;
+  height: 2.5rem;
+  text-align: center;
+  font-size: 1.2rem;
+}
