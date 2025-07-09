@@ -11,6 +11,7 @@ const authRoutes = require("./routes/auth");
 const dashboard = require("./routes/dashboard");
 const resetRoutes = require("./routes/reset");
 const forgotRoutes = require("./routes/forgot");
+const MongoStore = require("connect-mongo");
 
 dotenv.config();
 const app = express();
@@ -20,6 +21,9 @@ app.use(
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: true,
+    store: MongoStore.create({
+      mongoUrl: process.env.MONGO_URL,
+    }),
     cookie: { maxAge: 600000 },
   })
 );
