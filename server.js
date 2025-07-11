@@ -47,6 +47,9 @@ app.use("/", dashboard);
 app.use("/", resetRoutes);
 app.use("/", forgotRoutes);
 
+app.get("/health", (req, res) => {
+  res.status(200).send("OK");
+});
 app.get("/", (req, res) => res.redirect("/signup"));
 app.get("/signup", (req, res) => res.render("signup"));
 app.get("/login", (req, res) => {
